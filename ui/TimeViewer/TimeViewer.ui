@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TimeViewerClass</class>
+ <widget class="QMainWindow" name="TimeViewerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>122</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>时间查看器</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resource/DealBox.qrc">
+    <normaloff>:/image/TimeViewer.svg</normaloff>:/image/TimeViewer.svg</iconset>
+  </property>
+  <widget class="QWidget" name="Widget">
+   <layout class="QVBoxLayout" name="Layout">
+    <item>
+     <widget class="QLabel" name="TopTime">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>时间</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="LowTime">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resource/DealBox.qrc"/>
+ </resources>
+ <connections/>
+</ui>

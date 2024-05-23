@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DealBoxClass</class>
+ <widget class="QMainWindow" name="DealBoxClass">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>30</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>交易盒子</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource/DealBox.qrc">
+    <normaloff>:/image/Logo.ico</normaloff>:/image/Logo.ico</iconset>
+  </property>
+  <widget class="QWidget" name="Widget">
+   <widget class="QPushButton" name="TimeViewer">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>2</y>
+      <width>26</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>时间查看器</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../resource/DealBox.qrc">
+      <normaloff>:/image/TimeViewer.svg</normaloff>:/image/TimeViewer.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Events">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>2</y>
+      <width>26</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>事件查看器</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../resource/DealBox.qrc">
+      <normaloff>:/image/Events.svg</normaloff>:/image/Events.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="IPO">
+    <property name="geometry">
+     <rect>
+      <x>58</x>
+      <y>2</y>
+      <width>26</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>IPO查看器</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../resource/DealBox.qrc">
+      <normaloff>:/image/IPO.svg</normaloff>:/image/IPO.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SaveLayout">
+    <property name="geometry">
+     <rect>
+      <x>86</x>
+      <y>2</y>
+      <width>26</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>保存布局</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../resource/DealBox.qrc">
+      <normaloff>:/image/Save.svg</normaloff>:/image/Save.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Setting">
+    <property name="geometry">
+     <rect>
+      <x>114</x>
+      <y>2</y>
+      <width>26</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>设置</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../resource/DealBox.qrc">
+      <normaloff>:/image/Setting.svg</normaloff>:/image/Setting.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../resource/DealBox.qrc"/>
+ </resources>
+ <connections/>
+</ui>

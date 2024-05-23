@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/Events.svg</file>
+        <file>image/Logo.ico</file>
+        <file>image/TimeViewer.svg</file>
+        <file>image/Reload.svg</file>
+        <file>config/Events.json</file>
+        <file>config/TimeViewer.json</file>
+        <file>image/IPO.svg</file>
+        <file>image/Save.svg</file>
+        <file>image/Calibration.svg</file>
+        <file>image/Setting.svg</file>
+        <file>document/Update_Explain.md</file>
+        <file>document/About.md</file>
+    </qresource>
+</RCC>

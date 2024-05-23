@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IPOClass</class>
+ <widget class="QMainWindow" name="IPOClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IPO查看器</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resource/DealBox.qrc">
+    <normaloff>:/image/IPO.svg</normaloff>:/image/IPO.svg</iconset>
+  </property>
+  <widget class="QWidget" name="Widget"/>
+ </widget>
+ <resources>
+  <include location="../../resource/DealBox.qrc"/>
+ </resources>
+ <connections/>
+</ui>

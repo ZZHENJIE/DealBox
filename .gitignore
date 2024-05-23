@@ -1,0 +1,6 @@
+/.vs
+/DealBox
+/config
+/x64
+*.vcxproj
+*.vcxproj.*

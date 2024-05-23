@@ -1,0 +1,35 @@
+# if defined(UNDER_CE)
+#  include <winbase.h>
+# else
+#  include <windows.h>
+# endif
+
+IDI_ICON_MAIN ICON "image/Logo.ico"
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION 0,0,0,1
+    FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+    FILEFLAGS VS_FF_DEBUG
+#else
+    FILEFLAGS 0x0L
+#endif
+    FILEOS VOS__WINDOWS32
+    FILETYPE VFT_APP
+    FILESUBTYPE 0x0L
+    BEGIN
+        BLOCK "StringFileInfo"
+        BEGIN
+            BLOCK "080404b0"
+            BEGIN
+                VALUE "FileDescription", "DealBox"
+                VALUE "LegalCopyright", "zhongzhenjie0729@outlook.com"
+				VALUE "ProductName", "DealBox"
+				VALUE "ProductVersion", "0.0.0.1"
+            END
+        END
+        BLOCK "VarFileInfo"
+        BEGIN
+            VALUE "Translation",0x0804,1200
+        END
+    END
