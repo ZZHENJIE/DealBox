@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Source Files\TimeViewer">
+      <UniqueIdentifier>{04538e77-5d5b-43fc-820b-4d2ba640bde4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TimeViewer">
+      <UniqueIdentifier>{7284c255-5735-4484-b744-ccbcb2327017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Events">
+      <UniqueIdentifier>{2c4bbc17-b0c5-4316-b25b-009f5fc98552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{4e7e2b3e-4a42-4f61-a8b1-f565eea55c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\Events">
+      <UniqueIdentifier>{d3cd01ab-a349-4851-9ee8-8d59b6b0940c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\TimeViewer">
+      <UniqueIdentifier>{29f53d33-d19f-4d3b-8bf1-cb9d9b149f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IPO">
+      <UniqueIdentifier>{631b70a3-89ff-4ef8-a8f9-8842ac37e73d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\IPO">
+      <UniqueIdentifier>{38973115-31cb-4c86-b2bb-65751a90a199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\IPO">
+      <UniqueIdentifier>{daafa32a-d7da-491e-958d-e4a4888cd4d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\Setting">
+      <UniqueIdentifier>{3e07e9bf-3de9-49df-b1b0-ab7a86b56b4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Setting">
+      <UniqueIdentifier>{72392783-f333-4186-9390-10a818584922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Setting">
+      <UniqueIdentifier>{264c162a-2074-429e-8fed-7bf953946212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\document">
+      <UniqueIdentifier>{44f3ab43-13a5-422b-ac7f-03538482e2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\config">
+      <UniqueIdentifier>{f4dabc96-f3f9-4fdf-89a2-76a3173b01b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Theme">
+      <UniqueIdentifier>{e562f075-b011-447d-9a02-0276b93d25d1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ui\DealBox.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\TimeViewer\TimeViewer.ui">
+      <Filter>Form Files\TimeViewer</Filter>
+    </QtUic>
+    <QtUic Include="ui\Events\Events.ui">
+      <Filter>Form Files\Events</Filter>
+    </QtUic>
+    <QtUic Include="src\IPO\IPO.ui">
+      <Filter>Form Files\IPO</Filter>
+    </QtUic>
+    <QtUic Include="ui\Setting\Setting.ui">
+      <Filter>Form Files\Setting</Filter>
+    </QtUic>
+    <QtUic Include="ui\TimeViewer\TimeViewerSetting.ui">
+      <Filter>Form Files\TimeViewer</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\DealBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\TimeViewer\TimeViewer.h">
+      <Filter>Header Files\TimeViewer</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Events\Events.h">
+      <Filter>Header Files\Events</Filter>
+    </QtMoc>
+    <QtMoc Include="include\IPO\IPO.h">
+      <Filter>Header Files\IPO</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Setting\Setting.h">
+      <Filter>Header Files\Setting</Filter>
+    </QtMoc>
+    <QtMoc Include="include\TimeViewer\TimeViewerSetting.h">
+      <Filter>Header Files\TimeViewer</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resource\DealBox.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="resource\theme\dark\darkstyle.qrc">
+      <Filter>Resource Files\Theme</Filter>
+    </QtRcc>
+    <QtRcc Include="resource\theme\light\lightstyle.qrc">
+      <Filter>Resource Files\Theme</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DealBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimeViewer\TimeViewer.cpp">
+      <Filter>Source Files\TimeViewer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events\Events.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IPO\IPO.cpp">
+      <Filter>Source Files\IPO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Setting\Setting.cpp">
+      <Filter>Source Files\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimeViewer\TimeViewerSetting.cpp">
+      <Filter>Source Files\TimeViewer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\DealBox.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\document\About.md">
+      <Filter>Resource Files\document</Filter>
+    </None>
+    <None Include="resource\document\Update_Explain.md">
+      <Filter>Resource Files\document</Filter>
+    </None>
+    <None Include="resource\config\Events.json">
+      <Filter>Resource Files\config</Filter>
+    </None>
+    <None Include="resource\config\TimeViewer.json">
+      <Filter>Resource Files\config</Filter>
+    </None>
+    <None Include=".gitignore" />
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>

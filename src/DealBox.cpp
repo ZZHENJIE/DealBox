@@ -7,6 +7,7 @@
 
 DealBox::DealBox(QWidget *parent):QMainWindow(parent){
     this->setFixedSize(300, 30);
+    this->setWindowFlags(Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint );
     ui.setupUi(this);
 
     TimeViewerWindow = new TimeViewer(nullptr);
@@ -14,7 +15,7 @@ DealBox::DealBox(QWidget *parent):QMainWindow(parent){
     IPOWindow = new IPO(nullptr);
     SettingWindow = new Setting(nullptr);
 
-    QFile Config("./config/config.json");
+    QFile Config(QDir::homePath() + "/AppData/Local/DealBox/config/window.json");
     if (Config.exists()) {
         Config.open(QFile::ReadOnly);
         QJsonDocument Doc = QJsonDocument::fromJson(Config.readAll());
@@ -43,9 +44,10 @@ DealBox::DealBox(QWidget *parent):QMainWindow(parent){
     connect(ui.IPO, &QPushButton::clicked, IPOWindow, &IPO::show);
     connect(ui.Setting, &QPushButton::clicked, SettingWindow, &Setting::show);
     connect(ui.SaveLayout, &QPushButton::clicked, this, &DealBox::SaveLayout);
+    connect(ui.Close, &QPushButton::clicked, this, &DealBox::Close);
 }
 
-void DealBox::closeEvent(QCloseEvent* event) {
+void DealBox::Close() {
     QMessageBox::StandardButtons Reply = QMessageBox::warning(this, "保存布局", "是否保存布局?", QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
     
     switch (Reply) {
@@ -54,7 +56,6 @@ void DealBox::closeEvent(QCloseEvent* event) {
             break;
         }
         case QMessageBox::Cancel: {
-            event->ignore();
             return;
         }
     }
@@ -63,11 +64,11 @@ void DealBox::closeEvent(QCloseEvent* event) {
     delete EventsWindow;
     delete IPOWindow;
     delete SettingWindow;
-    event->accept();
+    this->close();
 }
 
 void DealBox::SaveLayout() {
-    QFile Config("./config/config.json");
+    QFile Config(QDir::homePath() + "/AppData/Local/DealBox/config/window.json");
     Config.open(QFile::WriteOnly);
 
     QJsonObject Root;

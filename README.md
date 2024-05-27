@@ -1,5 +1,5 @@
-# DealBox
+﻿# DealBox
 
 <img src="./resource/image/Logo.ico" style="width: 10%;">
 
-一个集成查询股票基本信息功能的程序,IPO查询,事件查询.
+涓€涓泦鎴愭煡璇㈢編鑲¤偂绁ㄥ熀鏈俊鎭姛鑳界殑绋嬪簭,IPO鏌ヨ,浜嬩欢鏌ヨ.

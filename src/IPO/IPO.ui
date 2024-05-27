@@ -17,7 +17,13 @@
    <iconset resource="../../resource/DealBox.qrc">
     <normaloff>:/image/IPO.svg</normaloff>:/image/IPO.svg</iconset>
   </property>
-  <widget class="QWidget" name="Widget"/>
+  <widget class="QWidget" name="Widget">
+   <layout class="QGridLayout" name="Layout">
+    <item row="0" column="0">
+     <widget class="QTableWidget" name="Table"/>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources>
   <include location="../../resource/DealBox.qrc"/>

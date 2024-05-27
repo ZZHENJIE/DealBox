@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TimeViewerSettingClass</class>
+ <widget class="QMainWindow" name="TimeViewerSettingClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>626</width>
+    <height>373</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>设置</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resource/DealBox.qrc">
+    <normaloff>:/image/Setting.svg</normaloff>:/image/Setting.svg</iconset>
+  </property>
+  <widget class="QWidget" name="Widget">
+   <layout class="QGridLayout" name="Layout">
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="Options_Box">
+      <property name="title">
+       <string>选项</string>
+      </property>
+      <layout class="QVBoxLayout" name="Options_Box_Layout">
+       <item>
+        <widget class="QCheckBox" name="Automatic_Calibration">
+         <property name="text">
+          <string>自动校准</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="Time_Format"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="Flashing_List_Box">
+      <property name="title">
+       <string>闪烁时间段</string>
+      </property>
+      <layout class="QFormLayout" name="Flashing_List_Box_Layout">
+       <item row="0" column="1">
+        <widget class="QTableWidget" name="Table"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="Add">
+         <property name="text">
+          <string>添加</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="Remove">
+         <property name="text">
+          <string>删除</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resource/DealBox.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -12,5 +12,6 @@
         <file>image/Setting.svg</file>
         <file>document/Update_Explain.md</file>
         <file>document/About.md</file>
+        <file>image/Close.svg</file>
     </qresource>
 </RCC>

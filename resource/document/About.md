@@ -1,4 +1,4 @@
-## cpr https://github.com/libcpr/cpr
+﻿## cpr https://github.com/libcpr/cpr
 
 This license applies to everything except the contents of the "test"
 directory and its subdirectories.

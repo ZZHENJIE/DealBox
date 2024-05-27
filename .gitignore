@@ -2,5 +2,4 @@
 /DealBox
 /config
 /x64
-*.vcxproj
-*.vcxproj.*
+/DealBox.vcxproj.user
