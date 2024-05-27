@@ -2,8 +2,11 @@
 #include <qapplication.h>
 #include <QFile>
 #include <QDir>
+#include <yyjson.h>
+#include <qprocess.h>
+#include <qdesktopservices.h>
 
-#define VERSION "Bata 0.0.1"
+#define VERSION "0.0.1"
 
 Setting::Setting(QWidget* parent) :QMainWindow(parent) {
 	UI.setupUi(this);
@@ -68,8 +71,10 @@ bool ProgressCallback(cpr::cpr_off_t downloadTotal, cpr::cpr_off_t downloadNow, 
 }
 
 void SettingRequest::run() {
-	std::ofstream of((QDir::homePath() + "/AppData/Local/DealBox/cache/update.zip").toStdString(), std::ios::binary);
+	QString Path = QDir::homePath() + "/AppData/Local/DealBox/cache/update";
+	std::ofstream of((Path + ".zip").toStdString(), std::ios::binary);
 	cpr::Response Response = cpr::Download(of, cpr::Url{Url.toStdString()}, cpr::ProgressCallback{ProgressCallback,static_cast<int64_t>(reinterpret_cast<intptr_t>(this))});
+	QDesktopServices::openUrl(QUrl(QDir::currentPath() + "/Update.vbs"));
 }
 
 void Setting::DownloadProgress(double Progress, float downloadTotal, float downloadNow) {
@@ -79,19 +84,60 @@ void Setting::DownloadProgress(double Progress, float downloadTotal, float downl
 
 void Setting::Check_Update() {
 	cpr::Response Response = cpr::Get(cpr::Url{ "https://api.github.com/repos/ZZHENJIE/DealBox/releases" });
-	
-	if (Request->isRunning()) {
-		QMessageBox::information(this, "提示", "正在下载,请稍等...");
+
+	yyjson_doc* Doc = yyjson_read(Response.text.c_str(), Response.text.size(), YYJSON_READ_NOFLAG);
+
+	yyjson_arr_iter iter = yyjson_arr_iter_with(Doc->root);
+
+	yyjson_val* val = yyjson_arr_iter_next(&iter);
+
+	yyjson_val* tag_name = yyjson_obj_get(val,"tag_name");
+
+	QStringList new_version = QString(yyjson_get_str(tag_name)).split('-').at(1).split('.');
+
+	QStringList current_version = QString(VERSION).split('.');
+
+	bool Is_new_version = false;
+
+	for (int Index = 0; Index < new_version.size(); Index++) {
+		if (new_version.at(Index).toInt() > current_version.at(Index).toInt()) {
+			Is_new_version = true;
+			break;
+		}
 	}
-	else {
-		DownloadDialog = new QProgressDialog(this);
-		DownloadDialog->setCancelButton(nullptr);
-		DownloadDialog->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
-		DownloadDialog->setWindowTitle("下载文件");
-		DownloadDialog->setValue(0);
-		DownloadDialog->show();
-		Request->start();
+
+	if (Is_new_version) {
+		if (QMessageBox::information(this, "提示", "有新版本: " + QString(yyjson_get_str(tag_name)) + " 是否下载更新?", QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
+			yyjson_val * assets = yyjson_obj_get(val, "assets");
+			iter = yyjson_arr_iter_with(assets);
+			while ((val = yyjson_arr_iter_next(&iter))) {
+				if (strcmp("DealBox-win32-x64.zip", yyjson_get_str(yyjson_obj_get(val, "name"))) == 0) {
+					QString browser_download_url = yyjson_get_str(yyjson_obj_get(val, "browser_download_url"));
+					//browser_download_url.replace("github", "kkgithub");
+					browser_download_url = "https://github.moeyy.xyz/" + browser_download_url;
+					if (Request->isRunning()) {
+						QMessageBox::information(this, "提示", "正在下载,请稍等...");
+					}
+					else {
+						DownloadDialog = new QProgressDialog(this);
+						DownloadDialog->setCancelButton(nullptr);
+						DownloadDialog->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+						DownloadDialog->setWindowTitle("下载文件");
+						DownloadDialog->setValue(0);
+						DownloadDialog->show();
+						Request->SetDownloadUrl(browser_download_url);
+						Request->start();
+					}
+				}
+			}
+		}
 	}
+	else
+	{
+		QMessageBox::information(this, "提示", "无新版本",QMessageBox::Yes);
+	}
+
+	yyjson_doc_free(Doc);
 }
 
 Setting::~Setting() {

@@ -4,8 +4,6 @@
         <file>image/Logo.ico</file>
         <file>image/TimeViewer.svg</file>
         <file>image/Reload.svg</file>
-        <file>config/Events.json</file>
-        <file>config/TimeViewer.json</file>
         <file>image/IPO.svg</file>
         <file>image/Save.svg</file>
         <file>image/Calibration.svg</file>

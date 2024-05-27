@@ -27,13 +27,13 @@ DealBox::DealBox(QWidget *parent):QMainWindow(parent){
 
         this->move(DealBox.value("WindowX").toInt(), DealBox.value("WindowY").toInt());
 
-        EventsWindow->setGeometry(Events.value("WindowX").toInt(), Events.value("WindowY").toInt(), Events.value("WindowW").toInt(), Events.value("WindowH").toInt());
+        EventsWindow->setGeometry(Events.value("WindowX").toInt(), Events.value("WindowY").toInt() + 32, Events.value("WindowW").toInt(), Events.value("WindowH").toInt());
         EventsWindow->setVisible(Events.value("Visible").toBool());
 
-        IPOWindow->setGeometry(IPO.value("WindowX").toInt(), IPO.value("WindowY").toInt(), IPO.value("WindowW").toInt(), IPO.value("WindowH").toInt());
+        IPOWindow->setGeometry(IPO.value("WindowX").toInt(), IPO.value("WindowY").toInt() + 32, IPO.value("WindowW").toInt(), IPO.value("WindowH").toInt());
         IPOWindow->setVisible(IPO.value("Visible").toBool());
         
-        TimeViewerWindow->setGeometry(TimeViewer.value("WindowX").toInt(), TimeViewer.value("WindowY").toInt(), TimeViewer.value("WindowW").toInt(), TimeViewer.value("WindowH").toInt());
+        TimeViewerWindow->setGeometry(TimeViewer.value("WindowX").toInt(), TimeViewer.value("WindowY").toInt() + 32, TimeViewer.value("WindowW").toInt(), TimeViewer.value("WindowH").toInt());
         TimeViewerWindow->setVisible(TimeViewer.value("Visible").toBool());
 
         Config.close();

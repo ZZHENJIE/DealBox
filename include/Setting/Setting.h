@@ -10,13 +10,13 @@
 class SettingRequest :public QThread {
 	Q_OBJECT
 public:
-	void SetDownloadUrl(QString Url);
+	void SetDownloadUrl(QString Url) { this->Url = Url; }
 private:
 	QString Url;
 protected:
 	virtual void run() override;
 Q_SIGNALS:
-	void DownloadProgress(double Progress,float downloadTotal, float downloadNow);
+	void DownloadProgress(double Progress, float downloadTotal, float downloadNow);
 };
 
 class Setting : public QMainWindow {
